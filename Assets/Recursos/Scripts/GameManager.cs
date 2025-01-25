@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] private Transform Levels; // Referência ao Transform dos Levels
     [SerializeField] private float cameraMoveSpeed = 0.1f; // Velocidade de movimento da câmera
+    [SerializeField] Transform spawnPonit; // Ponto de spawn
+    [SerializeField] GameObject[] levels; // Array de níveis
+    [SerializeField] private float spawnInterval = 3f; // Intervalo entre os spawns em segundos
 
-    [SerializeField] Transform spawnPonit;
-
-    [SerializeField] GameObject[] levels;
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Começa a invocar SpawRoom repetidamente após "spawnInterval" segundos
+        InvokeRepeating("SpawRoom", spawnInterval, spawnInterval);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // Movimenta o cameraHolder para cima com base na velocidade
-       // Levels.position += Vector3.down * cameraMoveSpeed * Time.deltaTime;
+        // Movimenta a câmera ou outras lógicas podem ser colocadas aqui
     }
 
     public void SpawRoom()
     {
-        int randomLevelIndex = Random.Range(0, levels.Length);
-        Instantiate(levels[randomLevelIndex], spawnPonit.position, Quaternion.identity);
+        int randomLevelIndex = Random.Range(0, levels.Length); // Escolhe um nível aleatório
+        Instantiate(levels[randomLevelIndex], spawnPonit.position, Quaternion.identity); // Instancia o nível
     }
 
 

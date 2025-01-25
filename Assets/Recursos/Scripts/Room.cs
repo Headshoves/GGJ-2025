@@ -22,7 +22,7 @@ public class Room : MonoBehaviour
 
         if(transform.position.y <= limitToDestroy)
         {
-            gm.SpawRoom();
+           // gm.SpawRoom();
             Destroy(gameObject);
              
         }
