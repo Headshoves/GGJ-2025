@@ -11,6 +11,7 @@ public class Player : MonoBehaviour{
     [SerializeField] private Personagem[] personagens;
     
     private int charIndex = 0;
+    private bool confirmed;
     
     private PlayerInput playerInput;
     
@@ -27,11 +28,13 @@ public class Player : MonoBehaviour{
 
     private void OnDisable(){
 
-        playerInput.actions.FindAction("Jump").performed -= controller.Jump;
-        playerInput.actions.FindAction("Jump").canceled -= controller.StopHoldingJump;
-        playerInput.actions.FindAction("Dash").performed -= controller.Dash;
-        playerInput.actions.FindAction("Move").started -= controller.OnMove;
-        playerInput.actions.FindAction("Move").canceled -= controller.OnMove;
+        if (controller != null){
+            playerInput.actions.FindAction("Jump").performed -= controller.Jump;
+            playerInput.actions.FindAction("Jump").canceled -= controller.StopHoldingJump;
+            playerInput.actions.FindAction("Dash").performed -= controller.Dash;
+            playerInput.actions.FindAction("Move").started -= controller.OnMove;
+            playerInput.actions.FindAction("Move").canceled -= controller.OnMove;
+        }
         
         playerInput.actions.FindAction("NextChar").performed -= NextChar;
         playerInput.actions.FindAction("PrevChar").performed -= PrevChar;
@@ -41,22 +44,47 @@ public class Player : MonoBehaviour{
     #region CHAR SELECTION
 
     public void NextChar(InputAction.CallbackContext context){
-        charIndex++;
-        if (charIndex >= personagens.Length){ charIndex = 0;}
-        ShowChar();
+        if (!confirmed){
+            charIndex++;
+            if (charIndex >= personagens.Length){ charIndex = 0;}
+            ShowChar();
+        }
     }
 
     public void PrevChar(InputAction.CallbackContext context){
-        charIndex--;
-        if (charIndex < 0){ charIndex = personagens.Length - 1;}
-        ShowChar();
+        if (!confirmed){
+            charIndex--;
+            if (charIndex < 0){ charIndex = personagens.Length - 1;}
+            ShowChar();
+        }
     }
 
     public void ConfirmChar(InputAction.CallbackContext context){
-        playerInput.actions.FindAction("NextChar").performed -= NextChar;
-        playerInput.actions.FindAction("PrevChar").performed -= PrevChar;
-        playerInput.actions.FindAction("Confirm").performed -= ConfirmChar;
-        
+        if (!confirmed){
+            playerSelection.GetComponent<Image>().color = Color.green;
+
+            if (playerInput.user.index != 0){
+                playerInput.actions.FindAction("NextChar").performed -= NextChar;
+                playerInput.actions.FindAction("PrevChar").performed -= PrevChar;
+                playerInput.actions.FindAction("Confirm").performed -= ConfirmChar;
+            }
+
+            PlayerSelectionController.Instance.AddPlayer(this);
+            
+            confirmed = true;
+        }
+        else if(confirmed && playerInput.user.index == 0){
+            PlayerSelectionController.Instance.StartGame();
+        }
+    }
+    
+    private void ShowChar(){
+        playerSelection.GetComponent<Image>().sprite = personagens[charIndex].sprite;
+    }
+
+    #endregion
+
+    public void SpawnChar(){
         GameObject personagem = Instantiate(personagens[charIndex].prefab);
         controller = personagem.GetComponent<PlayerController>();
         
@@ -67,14 +95,7 @@ public class Player : MonoBehaviour{
         playerInput.actions.FindAction("Dash").performed += controller.Dash;
         playerInput.actions.FindAction("Move").started += controller.OnMove;
         playerInput.actions.FindAction("Move").canceled += controller.OnMove;
-        
     }
-    
-    private void ShowChar(){
-        playerSelection.GetComponent<Image>().sprite = personagens[charIndex].sprite;
-    }
-
-    #endregion
 }
 
 [Serializable]
@@ -82,5 +103,4 @@ public class Personagem{
     public string nome;
     public GameObject prefab;
     public Sprite sprite;
-    public bool confirmed;
 }
