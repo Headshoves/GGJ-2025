@@ -24,6 +24,8 @@ public class Player : MonoBehaviour{
         playerInput.actions.FindAction("NextChar").performed += NextChar;
         playerInput.actions.FindAction("PrevChar").performed += PrevChar;
         playerInput.actions.FindAction("Confirm").performed += ConfirmChar;
+        
+        PlayerSelectionController.Instance.HideIntro();
     }
 
     private void OnDisable(){

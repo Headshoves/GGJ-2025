@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerSelectionController : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI log;
     [SerializeField] private GameObject playerSelecion;
+    [SerializeField] private GameObject intro;
     
     public static PlayerSelectionController Instance;
     
@@ -31,5 +32,9 @@ public class PlayerSelectionController : MonoBehaviour{
         }
         
         playerSelecion.SetActive(false);
+    }
+
+    public void HideIntro(){
+        intro.SetActive(false);
     }
 }
