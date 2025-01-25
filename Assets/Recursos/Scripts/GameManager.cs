@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform spawnPonit; // Ponto de spawn
     [SerializeField] GameObject[] levels; // Array de níveis
     [SerializeField] private float spawnInterval = 3f; // Intervalo entre os spawns em segundos
+    public bool gameHasStarted = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartGame()
     {
-        // Começa a invocar SpawRoom repetidamente após "spawnInterval" segundos
+        gameHasStarted = true;
         InvokeRepeating("SpawRoom", spawnInterval, spawnInterval);
     }
 
