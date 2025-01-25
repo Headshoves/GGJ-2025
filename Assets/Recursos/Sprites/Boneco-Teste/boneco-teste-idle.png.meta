@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -120,19 +120,27 @@ TextureImporter:
       name: boneco-teste-idle_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 16
-        height: 28
+        width: 32
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 716030dcb0cdd0a4b846630a93657bbc
-      internalID: -306365418
+      spriteID: 892509e8f0b56134ca48cb95909b696e
+      internalID: -1625486926
       vertices: []
       indices: 
       edges: []
@@ -141,19 +149,27 @@ TextureImporter:
       name: boneco-teste-idle_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 32
         y: 0
-        width: 16
-        height: 27
+        width: 32
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 7abc1212d7c70574ea25b5131e0c48dc
-      internalID: -962750975
+      spriteID: 680d29572361f9d4bb5a34ab038d7689
+      internalID: 671475387
       vertices: []
       indices: 
       edges: []
@@ -162,19 +178,27 @@ TextureImporter:
       name: boneco-teste-idle_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 64
         y: 0
-        width: 16
-        height: 27
+        width: 32
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 6552cbf8e5e9e434389704fe01efff55
-      internalID: 963888695
+      spriteID: 725fb0f7cc46687489f0ff3ceb979d2c
+      internalID: 645835273
       vertices: []
       indices: 
       edges: []
@@ -183,19 +207,27 @@ TextureImporter:
       name: boneco-teste-idle_3
       rect:
         serializedVersion: 2
-        x: 104
+        x: 96
         y: 0
-        width: 16
-        height: 28
+        width: 32
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: c13ad3d84a5e64c44b5f645b532f1f5b
-      internalID: 1458112473
+      spriteID: e01bda413c5f976419ac8c944a6497f3
+      internalID: -2014147644
       vertices: []
       indices: 
       edges: []
@@ -211,10 +243,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boneco-teste-idle_0: -306365418
-      boneco-teste-idle_1: -962750975
-      boneco-teste-idle_2: 963888695
-      boneco-teste-idle_3: 1458112473
+      boneco-teste-idle_0: -1625486926
+      boneco-teste-idle_1: 671475387
+      boneco-teste-idle_2: 645835273
+      boneco-teste-idle_3: -2014147644
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

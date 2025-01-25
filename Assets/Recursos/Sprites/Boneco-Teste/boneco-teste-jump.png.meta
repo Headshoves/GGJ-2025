@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b8e94fa9a922e34b864e3069f7ccada
+guid: 45136ae7857fff54b84e108d736b27a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,65 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boneco-teste-walk_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -16}
-        - {x: 16, y: 0}
-        - {x: 0, y: 16}
-        - {x: -16, y: 0}
-      physicsShape:
-      - - {x: 0, y: -16}
-        - {x: 16, y: 0}
-        - {x: 0, y: 16}
-        - {x: -16, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b3e44338d526824c90a2d3e8dce58d4
-      internalID: -1772697262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boneco-teste-walk_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -16}
-        - {x: 16, y: 0}
-        - {x: 0, y: 16}
-        - {x: -16, y: 0}
-      physicsShape:
-      - - {x: 0, y: -16}
-        - {x: 16, y: 0}
-        - {x: 0, y: 16}
-        - {x: -16, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe09e396a27f5b0498ea26da69576325
-      internalID: 734314586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boneco-teste-walk_0
+      name: boneco-teste-jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -197,14 +139,43 @@ TextureImporter:
         - {x: -16, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 1aeaaa2f130b1bc4c9fa7f33e0fe33cc
-      internalID: 862327742
+      spriteID: 1ec1f5c0e7a226644b11eafd11538d29
+      internalID: 992769782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boneco-teste-walk_2
+      name: boneco-teste-jump_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe7d23f86c2ad14b92e52850d6316ac
+      internalID: 1095458705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_2
       rect:
         serializedVersion: 2
         x: 64
@@ -226,8 +197,182 @@ TextureImporter:
         - {x: -16, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 6c430fa0173d2804baa134eac79a016b
-      internalID: -664425724
+      spriteID: 41c2a48ff877a094da37b771a61e6c87
+      internalID: -694028848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cee1d0adb470846a6fdab585356b96
+      internalID: -298075431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15eb8bf55993450408053adafa370149
+      internalID: -1981059481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b1b8c17775a9c428e57e4bd24127f0
+      internalID: -352429551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cce0b08cec7ddc45b7ad420ea62462e
+      internalID: -1767188381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f54c16acd7f2184eb2e137a1cf16bb8
+      internalID: 98146459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boneco-teste-jump_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 16, y: 0}
+        - {x: 0, y: 16}
+        - {x: -16, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce0f671f272d214195944c8cc31c87e
+      internalID: 630685306
       vertices: []
       indices: 
       edges: []
@@ -243,10 +388,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boneco-teste-walk_0: 862327742
-      boneco-teste-walk_1: -1772697262
-      boneco-teste-walk_2: -664425724
-      boneco-teste-walk_3: 734314586
+      boneco-teste-jump_0: 992769782
+      boneco-teste-jump_1: 1095458705
+      boneco-teste-jump_2: -694028848
+      boneco-teste-jump_3: -298075431
+      boneco-teste-jump_4: -1981059481
+      boneco-teste-jump_5: -352429551
+      boneco-teste-jump_6: -1767188381
+      boneco-teste-jump_7: 98146459
+      boneco-teste-jump_8: 630685306
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

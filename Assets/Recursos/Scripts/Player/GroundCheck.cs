@@ -8,11 +8,11 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.onGround = true;
+        player.OnGround(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        player.onGround = false;
+        player.OnGround(false);
     }
 }
