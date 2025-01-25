@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -754872804, guid: 1dddaf1c5e7095948b1be9363d2e969d, type: 3}
+  m_Sprite: {fileID: -306365418, guid: 0c732dfaa5732004790f421138487ece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,7 +210,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
 --- !u!114 &6172444452967105117
@@ -283,9 +283,12 @@ MonoBehaviour:
   _jumpForce: 50
   lowGravityScale: 0.5
   maxJumps: 2
+  fallingTreshold: 0
   canDash: 1
   dasshingCooldown: 0.2
   tr: {fileID: 0}
+  playerSprite: {fileID: 1249946055131186971}
+  animator: {fileID: 311699159132660308}
   onGround: 1
 --- !u!50 &5855326940198644230
 Rigidbody2D:
@@ -442,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747732507106210892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

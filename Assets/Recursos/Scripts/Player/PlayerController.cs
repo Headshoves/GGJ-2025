@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerInput playerInput;
+    [SerializeField] private SpriteRenderer playerSprite;
+    [SerializeField] private Animator animator;
 
     private Vector2 movimentInput;
     
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        
         playerInput.actions.FindAction("Jump").performed += Jump;
         playerInput.actions.FindAction("Jump").canceled += StopHoldingJump; // Quando o bot�o � solto
         playerInput.actions.FindAction("Dash").performed += Dash;
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.velocity = new Vector2(movimentInput.x * _speed, rb.velocity.y);
+        animator.SetBool("Run", movimentInput.x != 0);
 
         // Se o jogador nao estiver no chao e estiver segurando o botao de pulo
         if (!onGround && isHoldingJump && rb.velocity.y < fallingTreshold){
@@ -78,9 +82,11 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         // Inverte a escala do personagem na dire��o X
-        Vector3 theScale = transform.localScale;
-        theScale.x = Mathf.Sign(rb.velocity.x) * Mathf.Abs(theScale.x);
-        transform.localScale = theScale;
+        // Vector3 theScale = transform.localScale;
+        // theScale.x = Mathf.Sign(rb.velocity.x) * Mathf.Abs(theScale.x);
+        // transform.localScale = theScale;
+        
+        playerSprite.flipX = movimentInput.x < 0;
     }
 
     // Metodo que coleta o vector para a movimenta��o
@@ -120,7 +126,7 @@ public class PlayerController : MonoBehaviour
         isHoldingJump = false;
     }
 
-    // M�todo de dash
+    // Metodo de dash
     private void Dash(InputAction.CallbackContext ctx)
     {
         if (canDash && !isDashing)
@@ -144,7 +150,7 @@ public class PlayerController : MonoBehaviour
         // Espera o tempo do dash
         yield return new WaitForSeconds(dashingTime);
 
-        // Ap�s o dash, volta a velocidade normal
+        // Apos o dash, volta a velocidade normal
         isDashing = false;
         rb.gravityScale = 8f;
         tr.emitting = false;
@@ -154,7 +160,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    // Chamado no FixedUpdate, verifica a dire��o e chama o flip
+    // Chamado no FixedUpdate, verifica a direca�o e chama o flip
     private void Update()
     {
         if (movimentInput.x != 0)
