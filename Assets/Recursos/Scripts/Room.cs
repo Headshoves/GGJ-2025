@@ -18,13 +18,16 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.down * cameraMoveSpeed * Time.deltaTime;
-
-        if(transform.position.y <= limitToDestroy)
+        if (gm.gameHasStarted)
         {
-           // gm.SpawRoom();
-            Destroy(gameObject);
-             
+            transform.position += Vector3.down * cameraMoveSpeed * Time.deltaTime;
+
+            if (transform.position.y <= limitToDestroy)
+            {
+                // gm.SpawRoom();
+                Destroy(gameObject);
+
+            }
         }
     }
 }

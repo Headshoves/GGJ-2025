@@ -8,7 +8,8 @@ using UnityEngine.InputSystem;
 public class PlayerSelectionController : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI log;
     [SerializeField] private GameObject playerSelecion;
-    [SerializeField] private GameObject intro;
+
+    [SerializeField] GameManager gameManager;
     
     public static PlayerSelectionController Instance;
     
@@ -16,6 +17,7 @@ public class PlayerSelectionController : MonoBehaviour{
 
     private void Awake(){
         Instance = this;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void AddPlayer(Player player){
@@ -32,9 +34,8 @@ public class PlayerSelectionController : MonoBehaviour{
         }
         
         playerSelecion.SetActive(false);
-    }
+        gameManager.StartGame();
+        
 
-    public void HideIntro(){
-        intro.SetActive(false);
     }
 }
