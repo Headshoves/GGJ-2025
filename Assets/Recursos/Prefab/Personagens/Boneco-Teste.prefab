@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6172444452967105113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.55, y: -6.74, z: 0}
+  m_LocalPosition: {x: -1.37, y: -2.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -180,7 +180,6 @@ MonoBehaviour:
   canDash: 1
   dasshingCooldown: 0.2
   tr: {fileID: 1815785470978361580}
-  playerInput: {fileID: 0}
   playerSprite: {fileID: 1249946055131186971}
   animator: {fileID: 311699159132660308}
   onGround: 1
