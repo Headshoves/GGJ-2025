@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] private Transform Levels; // Referência ao Transform dos Levels
-    [SerializeField] private float cameraMoveSpeed = 0.1f; // Velocidade de movimento da câmera
+    //[SerializeField] private Transform Levels; // Referencia ao Transform dos Levels
+    [SerializeField] private float cameraMoveSpeed = 0.1f; // Velocidade de movimento da camera
 
     [SerializeField] Transform spawnPonit;
 

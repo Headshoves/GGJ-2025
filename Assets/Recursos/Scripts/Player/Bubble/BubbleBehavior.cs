@@ -11,10 +11,7 @@ public class BubbleBehavior : MonoBehaviour
     
     private Rigidbody2D _rigidbody;
 
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        
+    private void Start(){
         _rigidbody.drag = drag;
         
         // Após o tempo determinado, a bolha estoura
@@ -28,6 +25,7 @@ public class BubbleBehavior : MonoBehaviour
 
     public void Movement(Vector2 direction)
     {
+        _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.AddForce(direction * initialForce, ForceMode2D.Impulse);
         transform.DOScale(1f, 2f).From(0).SetEase(Ease.OutBack);
     }

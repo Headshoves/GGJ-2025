@@ -271,7 +271,7 @@ MonoBehaviour:
   lowGravityScale: 0.5
   canDash: 1
   dasshingCooldown: 0.2
-  tr: {fileID: 0}
+  tr: {fileID: 1815785470978361580}
   playerSprite: {fileID: 1249946055131186971}
   animator: {fileID: 311699159132660308}
   onGround: 1

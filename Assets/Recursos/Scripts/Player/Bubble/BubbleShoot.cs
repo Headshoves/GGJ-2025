@@ -34,11 +34,11 @@ public class BubbleShoot : MonoBehaviour
     private void Awake()
     {
         _input = GetComponent<PlayerInput>();
-        _controller = GetComponent<PlayerController>();
     }
 
     private void OnEnable()
     {
+        _controller = GetComponent<PlayerController>();
         _input.actions.FindAction("Shoot").performed += OnShoot;
     }
 
@@ -57,13 +57,15 @@ public class BubbleShoot : MonoBehaviour
 
     #region SHOOT
 
+    private BubbleBehavior bubble;
+    
     private void OnShoot(InputAction.CallbackContext context)
     {
         if (!CanShoot())
             return;
         
         Debug.Log("Pew Pew");
-        BubbleBehavior bubble = Instantiate(bubblePrefab, spawnPoint.position, spawnPoint.rotation);
+         bubble = Instantiate(bubblePrefab, spawnPoint.position, spawnPoint.rotation);
         bubble.Movement(bubbleDirection);
     }
     
