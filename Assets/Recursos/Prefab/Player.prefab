@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6172444452967105116}
   - component: {fileID: 6172444452967105117}
   - component: {fileID: 6172444452967105186}
+  - component: {fileID: 5855326940198644230}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -144,6 +145,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 89b9620e-a425-498d-8fb7-3c945f849cfb
     m_ActionName: GamePlay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 59c5dcf5-e3d6-4b45-99d5-6aac788fab44
+    m_ActionName: GamePlay/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -162,3 +167,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 30
+--- !u!50 &5855326940198644230
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172444452967105113}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 8
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
