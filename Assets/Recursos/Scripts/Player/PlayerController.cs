@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
 
     private Rigidbody2D rb;
-    private PlayerInput playerInput;
     [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private Animator animator;
 
@@ -38,28 +37,9 @@ public class PlayerController : MonoBehaviour
     private int currentJumps; // Contador de saltos restantes
 
     // Ao ativar o objeto, pega o PlayerInput dele e adiciona o callback do Jump e do move
-    private void OnEnable()
-    {
+    private void OnEnable(){
         rb = GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<PlayerInput>();
-        
-        playerInput.actions.FindAction("Jump").performed += Jump;
-        playerInput.actions.FindAction("Jump").canceled += StopHoldingJump; // Quando o botao e solto
-        playerInput.actions.FindAction("Dash").performed += Dash;
-        playerInput.actions.FindAction("Move").started += OnMove;
-        playerInput.actions.FindAction("Move").canceled += OnMove;
-        
         defaultGravity = rb.gravityScale;
-    }
-
-    // Ao desativar o objeto, remove os callbacks
-    private void OnDisable()
-    {
-        playerInput.actions.FindAction("Jump").performed -= Jump;
-        playerInput.actions.FindAction("Jump").canceled -= StopHoldingJump;
-        playerInput.actions.FindAction("Dash").performed -= Dash;
-        playerInput.actions.FindAction("Move").started -= OnMove;
-        playerInput.actions.FindAction("Move").canceled -= OnMove;
     }
 
     // Atualiza a velocidade do player de acordo com o axis gerado pelo input
@@ -93,12 +73,15 @@ public class PlayerController : MonoBehaviour
     }
 
     // Metodo que coleta o vector para a movimenta��o
-    public void OnMove(InputAction.CallbackContext ctx) => movimentInput = ctx.ReadValue<Vector2>();
+    public void OnMove(InputAction.CallbackContext ctx){ 
+        movimentInput = ctx.ReadValue<Vector2>();
+        Debug.Log("Chamou essa merda");
+    }
     
     #region JUMP
 
     // Metodo de pulo besico, aplica uma forca no player para cima
-    private void Jump(InputAction.CallbackContext ctx)
+    public void Jump(InputAction.CallbackContext ctx)
     {
         animator.SetTrigger("Jump");
         if (onGround){
@@ -117,7 +100,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Metodo para quando o botao de pulo e solto
-    private void StopHoldingJump(InputAction.CallbackContext ctx)
+    public void StopHoldingJump(InputAction.CallbackContext ctx)
     {
         isHoldingJump = false;
     }
@@ -134,7 +117,7 @@ public class PlayerController : MonoBehaviour
     #region DASH
 
     // Metodo de dash
-    private void Dash(InputAction.CallbackContext ctx)
+    public void Dash(InputAction.CallbackContext ctx)
     {
         if (canDash && !isDashing)
         {
@@ -169,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    private void Flip()
+    public void Flip()
     {
         // Inverte a escala do personagem na dire��o X
         // Inverte a escala do personagem na dire��o X

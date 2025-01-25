@@ -167,6 +167,107 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MenuController"",
+            ""id"": ""5dc38043-fbb7-45aa-857b-335a2676c3f5"",
+            ""actions"": [
+                {
+                    ""name"": ""NextChar"",
+                    ""type"": ""Button"",
+                    ""id"": ""cbb5966a-04c4-4dbf-bd4d-e64f37715ed9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PrevChar"",
+                    ""type"": ""Button"",
+                    ""id"": ""b359fd3e-6c55-4233-ad91-f3d2d0402bed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""86131536-acf3-4aec-9a3d-14f7aec721f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""97398a81-b6bd-48cd-a9cc-9dede4c42b01"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextChar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b02a9fd-3970-4812-9ee9-85089a972d1e"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextChar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b80b59f8-f583-4f76-822a-c68a00d2bce2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrevChar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ff96b53-079b-47c9-939b-1a3ddba1570a"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrevChar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8980e1b5-3655-498d-8208-c7a9790b1d62"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f3e6de7-fca3-476c-832d-f46419943137"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -176,6 +277,11 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         m_GamePlay_Dash = m_GamePlay.FindAction("Dash", throwIfNotFound: true);
+        // MenuController
+        m_MenuController = asset.FindActionMap("MenuController", throwIfNotFound: true);
+        m_MenuController_NextChar = m_MenuController.FindAction("NextChar", throwIfNotFound: true);
+        m_MenuController_PrevChar = m_MenuController.FindAction("PrevChar", throwIfNotFound: true);
+        m_MenuController_Confirm = m_MenuController.FindAction("Confirm", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,10 +401,78 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
         }
     }
     public GamePlayActions @GamePlay => new GamePlayActions(this);
+
+    // MenuController
+    private readonly InputActionMap m_MenuController;
+    private List<IMenuControllerActions> m_MenuControllerActionsCallbackInterfaces = new List<IMenuControllerActions>();
+    private readonly InputAction m_MenuController_NextChar;
+    private readonly InputAction m_MenuController_PrevChar;
+    private readonly InputAction m_MenuController_Confirm;
+    public struct MenuControllerActions
+    {
+        private @PlayerControllerMap m_Wrapper;
+        public MenuControllerActions(@PlayerControllerMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NextChar => m_Wrapper.m_MenuController_NextChar;
+        public InputAction @PrevChar => m_Wrapper.m_MenuController_PrevChar;
+        public InputAction @Confirm => m_Wrapper.m_MenuController_Confirm;
+        public InputActionMap Get() { return m_Wrapper.m_MenuController; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuControllerActions set) { return set.Get(); }
+        public void AddCallbacks(IMenuControllerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MenuControllerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MenuControllerActionsCallbackInterfaces.Add(instance);
+            @NextChar.started += instance.OnNextChar;
+            @NextChar.performed += instance.OnNextChar;
+            @NextChar.canceled += instance.OnNextChar;
+            @PrevChar.started += instance.OnPrevChar;
+            @PrevChar.performed += instance.OnPrevChar;
+            @PrevChar.canceled += instance.OnPrevChar;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
+        }
+
+        private void UnregisterCallbacks(IMenuControllerActions instance)
+        {
+            @NextChar.started -= instance.OnNextChar;
+            @NextChar.performed -= instance.OnNextChar;
+            @NextChar.canceled -= instance.OnNextChar;
+            @PrevChar.started -= instance.OnPrevChar;
+            @PrevChar.performed -= instance.OnPrevChar;
+            @PrevChar.canceled -= instance.OnPrevChar;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
+        }
+
+        public void RemoveCallbacks(IMenuControllerActions instance)
+        {
+            if (m_Wrapper.m_MenuControllerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMenuControllerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MenuControllerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MenuControllerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MenuControllerActions @MenuController => new MenuControllerActions(this);
     public interface IGamePlayActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+    }
+    public interface IMenuControllerActions
+    {
+        void OnNextChar(InputAction.CallbackContext context);
+        void OnPrevChar(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
     }
 }
