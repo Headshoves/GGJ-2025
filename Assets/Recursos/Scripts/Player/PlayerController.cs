@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     private bool hasLanded = false;
 
+    public Player player;
+
     // Ao ativar o objeto, pega o PlayerInput dele e adiciona o callback do Jump e do move
     private void OnEnable(){
         rb = GetComponent<Rigidbody2D>();
@@ -77,7 +79,7 @@ public class PlayerController : MonoBehaviour
     // Metodo que coleta o vector para a movimenta��o
     public void OnMove(InputAction.CallbackContext ctx){
         movimentInput = ctx.ReadValue<Vector2>();
-        Debug.Log($"Movimento: {movimentInput}");
+       // Debug.Log($"Movimento: {movimentInput}");
     }
     
     #region JUMP
@@ -119,6 +121,22 @@ public class PlayerController : MonoBehaviour
         else if (!isGround)
         {
             hasLanded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Death"))
+        {
+            player.PlayeDeath();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            player.PlayeDeath();
         }
     }
 

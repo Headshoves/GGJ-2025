@@ -36,6 +36,7 @@ public class Player : MonoBehaviour{
             playerInput.actions.FindAction("Dash").performed -= controller.Dash;
             playerInput.actions.FindAction("Move").performed -= controller.OnMove;
             playerInput.actions.FindAction("Move").canceled -= controller.OnMove;
+            controller.gameObject.SetActive(false);
         }
         
         playerInput.actions.FindAction("NextChar").performed -= NextChar;
@@ -89,15 +90,29 @@ public class Player : MonoBehaviour{
     public void SpawnChar(){
         GameObject personagem = Instantiate(personagens[charIndex].prefab);
         controller = personagem.GetComponent<PlayerController>();
-        
+        controller.player = this;
+
         playerInput.SwitchCurrentActionMap("GamePlay");
-        
+
         playerInput.actions.FindAction("Jump").performed += controller.Jump;
         playerInput.actions.FindAction("Jump").canceled += controller.StopHoldingJump;
         playerInput.actions.FindAction("Dash").performed += controller.Dash;
         playerInput.actions.FindAction("Move").performed += controller.OnMove;
         playerInput.actions.FindAction("Move").canceled += controller.OnMove;
     }
+
+
+    public void PlayeDeath()
+    {
+        this.enabled = false;
+        PlayerSelectionController.Instance.CheckEndGame();
+    }
+
+    public string GetName()
+    {
+        return personagens[charIndex].nome;
+    }
+
 }
 
 [Serializable]

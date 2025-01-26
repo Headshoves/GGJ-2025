@@ -48,15 +48,15 @@ MonoBehaviour:
   controller: {fileID: 0}
   playerSelection: {fileID: 404697963933869686, guid: b34c56b151446f642b7759060ce4988a, type: 3}
   personagens:
-  - nome: 
+  - nome: Boneco-De-Teste
     prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
+    sprite: {fileID: -1625486926, guid: 0c732dfaa5732004790f421138487ece, type: 3}
+  - nome: Miquei
+    prefab: {fileID: 4925023981312711640, guid: baa9f965d51481b4d8af38415efba36a, type: 3}
+    sprite: {fileID: -1659242107, guid: e2af08e7776a9914d84eb9450c4018f4, type: 3}
+  - nome: Boboneco
+    prefab: {fileID: 6172444452967105113, guid: d690504cf0c5fbf4d9990ab9f28b0472, type: 3}
     sprite: {fileID: 992769782, guid: 45136ae7857fff54b84e108d736b27a7, type: 3}
-  - nome: 
-    prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
-    sprite: {fileID: -298075431, guid: 45136ae7857fff54b84e108d736b27a7, type: 3}
-  - nome: 
-    prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
-    sprite: {fileID: -1767188381, guid: 45136ae7857fff54b84e108d736b27a7, type: 3}
 --- !u!114 &-6037538241556193883
 MonoBehaviour:
   m_ObjectHideFlags: 0

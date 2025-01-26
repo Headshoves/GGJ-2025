@@ -17,6 +17,8 @@ public class PlayerSelectionController : MonoBehaviour{
     
     private List<Player> players = new List<Player>();
 
+    public GameObject vitoriaPopUp;
+
     private void Awake(){
         Instance = this;
         gameManager = FindObjectOfType<GameManager>();
@@ -44,5 +46,33 @@ public class PlayerSelectionController : MonoBehaviour{
     public void HideIntro()
     {
         intro.SetActive(false);
+    }
+
+    public void CheckEndGame()
+    {
+        int qtdActivePlayers = 0;
+        Player winner = null;
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i].enabled)
+            {
+                qtdActivePlayers++;
+                winner = players[i];
+            }
+        }
+
+        if (qtdActivePlayers == 1)
+        {
+            vitoriaPopUp.SetActive(true);
+            gameManager.StartCoroutine(gameManager.RestartCurrentScene());
+            Debug.Log("Jogo acabou, o jogador " + winner.GetName());
+        }
+        else if (qtdActivePlayers == 0)
+        {
+            vitoriaPopUp.SetActive(true);
+            gameManager.StartCoroutine(gameManager.RestartCurrentScene());
+            Debug.Log("Jogo acabou, geral perdeu");
+        }
     }
 }

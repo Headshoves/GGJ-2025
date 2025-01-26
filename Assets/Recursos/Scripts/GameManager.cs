@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,5 +29,10 @@ public class GameManager : MonoBehaviour
         Instantiate(levels[randomLevelIndex], spawnPonit.position, Quaternion.identity); // Instancia o nível
     }
 
-
+    public IEnumerator RestartCurrentScene()
+    {
+        yield return new WaitForSeconds(3f);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
 }
