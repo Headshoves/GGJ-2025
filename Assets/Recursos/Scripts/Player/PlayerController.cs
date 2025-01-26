@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     public Player player;
 
+    [SerializeField] GameObject deathParticle;
+
     // Ao ativar o objeto, pega o PlayerInput dele e adiciona o callback do Jump e do move
     private void OnEnable(){
         rb = GetComponent<Rigidbody2D>();
@@ -128,6 +130,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Death"))
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             player.PlayeDeath();
         }
     }
@@ -136,6 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Death"))
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             player.PlayeDeath();
         }
     }

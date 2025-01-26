@@ -184,6 +184,7 @@ MonoBehaviour:
   animator: {fileID: 311699159132660308}
   onGround: 1
   player: {fileID: 0}
+  deathParticle: {fileID: 2107833984454716376, guid: 50d525080b74512488b5a269f1fc52af, type: 3}
 --- !u!50 &5855326940198644230
 Rigidbody2D:
   serializedVersion: 4
