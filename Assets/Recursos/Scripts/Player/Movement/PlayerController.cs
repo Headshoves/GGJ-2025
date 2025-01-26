@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
     #region JUMP
 
     // Metodo de pulo besico, aplica uma forca no player para cima
-    private void Jump(InputAction.CallbackContext ctx)
+    public void Jump(InputAction.CallbackContext ctx)
     {
         animator.SetTrigger("Jump");
         if (onGround){
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Metodo para quando o botao de pulo e solto
-    private void StopHoldingJump(InputAction.CallbackContext ctx)
+    public void StopHoldingJump(InputAction.CallbackContext ctx)
     {
         isHoldingJump = false;
     }
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
     #region DASH
 
     // Metodo de dash
-    private void Dash(InputAction.CallbackContext ctx)
+    public void Dash(InputAction.CallbackContext ctx)
     {
         if (canDash && !isDashing)
         {
