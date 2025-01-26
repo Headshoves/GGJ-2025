@@ -19,9 +19,14 @@ public class PlayerSelectionController : MonoBehaviour{
 
     public GameObject vitoriaPopUp;
 
+    public bool isInIntro = true;
+
+    [SerializeField] private TextMeshProUGUI nomeVitoria;
+
     private void Awake(){
         Instance = this;
         gameManager = FindObjectOfType<GameManager>();
+        isInIntro = true;
     }
 
     public void AddPlayer(Player player){
@@ -45,7 +50,14 @@ public class PlayerSelectionController : MonoBehaviour{
 
     public void HideIntro()
     {
+        StartCoroutine(HideIntroChange());
         intro.SetActive(false);
+    }
+
+    IEnumerator HideIntroChange()
+    {
+        yield return new WaitForSeconds(0.7f);
+        isInIntro = false;
     }
 
     public void CheckEndGame()
@@ -66,11 +78,13 @@ public class PlayerSelectionController : MonoBehaviour{
         {
             vitoriaPopUp.SetActive(true);
             gameManager.StartCoroutine(gameManager.RestartCurrentScene());
+            nomeVitoria.text = winner.GetName();
             Debug.Log("Jogo acabou, o jogador " + winner.GetName());
         }
         else if (qtdActivePlayers == 0)
         {
             vitoriaPopUp.SetActive(true);
+            nomeVitoria.text = "Ninguem";
             gameManager.StartCoroutine(gameManager.RestartCurrentScene());
             Debug.Log("Jogo acabou, geral perdeu");
         }

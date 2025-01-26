@@ -20,7 +20,7 @@ public class Room : MonoBehaviour
     {
         if (gm.gameHasStarted)
         {
-            transform.position += Vector3.down * cameraMoveSpeed * Time.deltaTime;
+            transform.position += Vector3.down * gm.cameraMoveSpeed * Time.deltaTime;
 
             if (transform.position.y <= limitToDestroy)
             {

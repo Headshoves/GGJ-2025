@@ -63,7 +63,7 @@ public class Player : MonoBehaviour{
     }
 
     public void ConfirmChar(InputAction.CallbackContext context){
-        if (!confirmed){
+        if (!confirmed && PlayerSelectionController.Instance.isInIntro == false){
             playerSelection.GetComponent<Image>().color = Color.green;
 
             if (playerInput.user.index != 0){

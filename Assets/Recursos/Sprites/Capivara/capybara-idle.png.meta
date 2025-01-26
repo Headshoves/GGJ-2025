@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e2af08e7776a9914d84eb9450c4018f4
+guid: a4fa22db6f2eaaf48acd31dbd9ec9427
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -93,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: miquei-idle_0
+      name: capybara-idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -107,14 +107,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4acf3960327ff04d963e9aed37f0f6b
-      internalID: -1659242107
+      spriteID: af0944f35847f5849b7bc76d071c891b
+      internalID: 1835365178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miquei-idle_1
+      name: capybara-idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eeed8cad01131e4da9cb3779c0970f2
-      internalID: 1806662688
+      spriteID: 28e52112bcb213f4b8f9597119b68044
+      internalID: -791972977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miquei-idle_2
+      name: capybara-idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6343145eec7e0ef46ae01deee415fecb
-      internalID: -2003425200
+      spriteID: 1c10e47dfef4cbe4b897ae1c175e5297
+      internalID: -2140545012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miquei-idle_3
+      name: capybara-idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -170,8 +170,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242b6638d1f14954895d5c3753d577a1
-      internalID: 1620730386
+      spriteID: 467ee785a021d5a438878ce72f345aff
+      internalID: -945169869
       vertices: []
       indices: 
       edges: []
@@ -187,10 +187,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      miquei-idle_0: -1659242107
-      miquei-idle_1: 1806662688
-      miquei-idle_2: -2003425200
-      miquei-idle_3: 1620730386
+      capybara-idle_0: 1835365178
+      capybara-idle_1: -791972977
+      capybara-idle_2: -2140545012
+      capybara-idle_3: -945169869
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e2af08e7776a9914d84eb9450c4018f4
+guid: 1fd72143c313de840b50da15ec298dda
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -93,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: miquei-idle_0
+      name: capybara-jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -107,14 +107,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4acf3960327ff04d963e9aed37f0f6b
-      internalID: -1659242107
+      spriteID: 3ad3f92e444afdc4bbb8dfff7ad1719e
+      internalID: 1479001419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miquei-idle_1
+      name: capybara-jump_1
       rect:
         serializedVersion: 2
         x: 32
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eeed8cad01131e4da9cb3779c0970f2
-      internalID: 1806662688
+      spriteID: 6cc1a6d6ccbc1d1448e8933e9fcfebc5
+      internalID: -1399616705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miquei-idle_2
+      name: capybara-jump_2
       rect:
         serializedVersion: 2
         x: 64
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6343145eec7e0ef46ae01deee415fecb
-      internalID: -2003425200
+      spriteID: 98aeec4578900b444a3851f38add92ff
+      internalID: 726784958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: miquei-idle_3
+      name: capybara-jump_3
       rect:
         serializedVersion: 2
         x: 96
@@ -170,8 +170,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242b6638d1f14954895d5c3753d577a1
-      internalID: 1620730386
+      spriteID: 2f3645e5943be0a478521f3d5810787e
+      internalID: 1416288293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capybara-jump_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e928079495a7e74d80112df3498138e
+      internalID: -1060294013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capybara-jump_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b707612311eb016478186c020967df2a
+      internalID: -1665294579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capybara-jump_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b9083e7056e1e46af25da91e133222
+      internalID: 460116369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capybara-jump_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c9af93c5f5ffa49a3eabbfedf14d52
+      internalID: 222591135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capybara-jump_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16879c64105419140b227f1362a3c62a
+      internalID: -875963782
       vertices: []
       indices: 
       edges: []
@@ -187,10 +292,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      miquei-idle_0: -1659242107
-      miquei-idle_1: 1806662688
-      miquei-idle_2: -2003425200
-      miquei-idle_3: 1620730386
+      capybara-jump_0: 1479001419
+      capybara-jump_1: -1399616705
+      capybara-jump_2: 726784958
+      capybara-jump_3: 1416288293
+      capybara-jump_4: -1060294013
+      capybara-jump_5: -1665294579
+      capybara-jump_6: 460116369
+      capybara-jump_7: 222591135
+      capybara-jump_8: -875963782
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
