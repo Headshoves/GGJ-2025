@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public bool onGround;
     private bool isHoldingJump; // Verifica se o jogador esta segurando o botao de pulo
     private int currentJumps; // Contador de saltos restantes
+
+    public Player player;
     
     public Vector2 PlayerDirection => movimentInput;
 
@@ -43,25 +45,8 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<PlayerInput>();
-        
-        playerInput.actions.FindAction("Jump").performed += Jump;
-        playerInput.actions.FindAction("Jump").canceled += StopHoldingJump; // Quando o botao e solto
-        playerInput.actions.FindAction("Dash").performed += Dash;
-        playerInput.actions.FindAction("Move").started += OnMove;
-        playerInput.actions.FindAction("Move").canceled += OnMove;
         
         defaultGravity = rb.gravityScale;
-    }
-
-    // Ao desativar o objeto, remove os callbacks
-    private void OnDisable()
-    {
-        playerInput.actions.FindAction("Jump").performed -= Jump;
-        playerInput.actions.FindAction("Jump").canceled -= StopHoldingJump;
-        playerInput.actions.FindAction("Dash").performed -= Dash;
-        playerInput.actions.FindAction("Move").started -= OnMove;
-        playerInput.actions.FindAction("Move").canceled -= OnMove;
     }
 
     // Atualiza a velocidade do player de acordo com o axis gerado pelo input
@@ -181,4 +166,10 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    private void OnCollisionEnter2D(Collision2D other){
+        if (other.gameObject.CompareTag("Death")){
+            player.PlayeDeath();
+        }
+    }
+    
 }
