@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movimentInput;
     
-    public bool onGround;
+    public bool onGround = true;
     private bool isHoldingJump; // Verifica se o jogador esta segurando o botao de pulo
     private int currentJumps; // Contador de saltos restantes
 
@@ -110,10 +110,11 @@ public class PlayerController : MonoBehaviour
     public void OnGround(bool isGround)
     {
         onGround = isGround;
-        if (isGround && !hasLanded)
+        if (isGround)
         {
+           
+           hasLanded = true;
             animator.SetTrigger("GroundCollision");
-            hasLanded = true;
         }
         else if (!isGround)
         {

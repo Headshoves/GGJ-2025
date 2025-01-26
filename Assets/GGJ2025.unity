@@ -516,6 +516,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 171058871, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 826966910, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 826966911, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
       propertyPath: m_LocalScale.x
       value: 35
@@ -527,6 +535,10 @@ PrefabInstance:
     - target: {fileID: 826966911, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
       propertyPath: m_LocalPosition.y
       value: -5.9018
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105716581, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1105716582, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -579,6 +591,10 @@ PrefabInstance:
     - target: {fileID: 6031840672200101979, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
       propertyPath: m_Name
       value: roomStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031840672822884610, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04922dc5ef03f8d4a8911e026bbabb93, type: 3}
@@ -699,6 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: {fileID: 136019810}
   playerSelecion: {fileID: 1947742367}
+  intro: {fileID: 0}
   gameManager: {fileID: 0}
 --- !u!1001 &1779434052
 PrefabInstance:
@@ -707,6 +724,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 258800786, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782741973, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902050519, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882266079734730906, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6882266079886859522, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
       propertyPath: m_Name
       value: room1
@@ -754,6 +787,10 @@ PrefabInstance:
     - target: {fileID: 6882266079886859549, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882266081184467155, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}
