@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
     public Vector2 PlayerDirection => movimentInput;
 
     // Ao ativar o objeto, pega o PlayerInput dele e adiciona o callback do Jump e do move
-    private void OnEnable()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
-        defaultGravity = rb.gravityScale;
+        if(defaultGravity ==0)
+            defaultGravity = rb.gravityScale;
     }
 
     // Atualiza a velocidade do player de acordo com o axis gerado pelo input

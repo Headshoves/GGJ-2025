@@ -61,6 +61,7 @@ public class BubbleBehavior : MonoBehaviour
             Vector2 perpendicular = new Vector2(-_direction.y, _direction.x);
             _rigidbody.AddForce(perpendicular * sineOffset);
         }
+        
         else if (_trappedPlayer != null)
         {
             // Move o jogador preso junto com a bolha
@@ -104,7 +105,7 @@ public class BubbleBehavior : MonoBehaviour
                 {
                     Debug.Log("COLIDIU COM O INIMIGO");
                     // Prende o jogador inimigo
-                    TrapPlayer(player);
+                    TrapPlayer(player.player);
                 }
                 else if (_playerTrapped && player == _shooter)
                 {
@@ -137,13 +138,19 @@ public class BubbleBehavior : MonoBehaviour
     }
 
 
-    private void TrapPlayer(PlayerController player)
+    private void TrapPlayer(Player player)
     {
-        _playerTrapped = true;
-        _trappedPlayer = player;
-        _trappedPlayer.enabled = false; // Desativa os controles do jogador preso
-        _trappedPlayer.GetComponent<CapsuleCollider2D>().enabled = false; // Desativa a colisão do jogador preso
-        _escapeAttempts = 0;
+        // _playerTrapped = true;
+        // _trappedPlayer = player.controller;
+        // _trappedPlayer.enabled = false; // Desativa os controles do jogador preso
+        // _trappedPlayer.GetComponent<CapsuleCollider2D>().enabled = false; // Desativa a colisão do jogador preso
+        // _escapeAttempts = 0;
+        // player.TrapPlayer();
+        // player.onEscape.RemoveAllListeners();
+        // player.onEscape.AddListener(ReleasePlayer);
+
+        player.Freeze();
+        gameObject.SetActive(false);
 
         //CancelInvoke(nameof(DestroyBubble));
         //Invoke(nameof(DestroyBubble), lifetime + 2f); // Extende o tempo de vida da bolha
@@ -161,10 +168,8 @@ public class BubbleBehavior : MonoBehaviour
         }
     }
 
-    private void ReleasePlayer()
+    public void ReleasePlayer()
     {
-        if (_trappedPlayer != null)
-        {
             // Restaura os controles do jogador preso
             _trappedPlayer.enabled = true;
             _trappedPlayer.GetComponent<CapsuleCollider>().enabled = true;
@@ -174,10 +179,9 @@ public class BubbleBehavior : MonoBehaviour
 
             // Libera a referência ao jogador preso
             _trappedPlayer = null;
-        }
 
-        _playerTrapped = false;
-
+            _playerTrapped = false;
+        
         // Destroi a bolha
         gameObject.SetActive(false);
     }

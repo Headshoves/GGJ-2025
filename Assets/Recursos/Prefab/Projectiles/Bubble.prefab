@@ -94,12 +94,6 @@ MonoBehaviour:
   sineAmplitude: 1
   sineFrequency: 2
   spawnEase: 24
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  scenarioLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &5491740072684841401
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour{
-    [SerializeField] private PlayerController controller;
+    [SerializeField] public PlayerController controller;
     [SerializeField] private BubbleShoot bubbleShoot;
     [SerializeField] private GameObject playerSelection;
     [SerializeField] private Personagem[] personagens;
@@ -132,6 +134,14 @@ public class Player : MonoBehaviour{
     public string GetName()
     {
         return personagens[charIndex].nome;
+    }
+
+    public async void Freeze(){
+        controller.enabled = false;
+
+        await Task.Delay(2000);
+
+        controller.enabled = true;
     }
 
 }
