@@ -34,7 +34,7 @@ public class Player : MonoBehaviour{
             playerInput.actions.FindAction("Jump").performed -= controller.Jump;
             playerInput.actions.FindAction("Jump").canceled -= controller.StopHoldingJump;
             playerInput.actions.FindAction("Dash").performed -= controller.Dash;
-            playerInput.actions.FindAction("Move").started -= controller.OnMove;
+            playerInput.actions.FindAction("Move").performed -= controller.OnMove;
             playerInput.actions.FindAction("Move").canceled -= controller.OnMove;
         }
         
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour{
         playerInput.actions.FindAction("Jump").performed += controller.Jump;
         playerInput.actions.FindAction("Jump").canceled += controller.StopHoldingJump;
         playerInput.actions.FindAction("Dash").performed += controller.Dash;
-        playerInput.actions.FindAction("Move").started += controller.OnMove;
+        playerInput.actions.FindAction("Move").performed += controller.OnMove;
         playerInput.actions.FindAction("Move").canceled += controller.OnMove;
     }
 }

@@ -75,9 +75,9 @@ public class PlayerController : MonoBehaviour
     }
 
     // Metodo que coleta o vector para a movimenta��o
-    public void OnMove(InputAction.CallbackContext ctx){ 
+    public void OnMove(InputAction.CallbackContext ctx){
         movimentInput = ctx.ReadValue<Vector2>();
-        Debug.Log("Chamou essa merda");
+        Debug.Log($"Movimento: {movimentInput}");
     }
     
     #region JUMP
