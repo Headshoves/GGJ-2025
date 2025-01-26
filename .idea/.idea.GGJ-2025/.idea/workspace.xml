@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4592b284-fe8d-40f8-97fe-e3031fa5bef0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.cpsLog/conversation-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/.cpsLog/conversation-log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cpsLog/edit-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/.cpsLog/edit-log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-2025/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-2025/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Effects/Bubble/Textures/bolha.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Effects/Bubble/Textures/bolha.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Effects/Bubble/Textures/bolha.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Effects/Bubble/Textures/bolha.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GGJ2025.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GGJ2025.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/EnvironmentChunks/room1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/EnvironmentChunks/room1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/EnvironmentChunks/room2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/EnvironmentChunks/room2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/EnvironmentChunks/room3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/EnvironmentChunks/room3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Boneco-Teste 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Boneco-Teste 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Boneco-Teste.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Boneco-Teste.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Miquei.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Miquei.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Players/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Players/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Projectiles/Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Projectiles/Bubble.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Bubble/BubbleBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Bubble/BubbleBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Bubble/BubbleShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Bubble/BubbleShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2sAZMmNEPb8D7ZfJArlYR0iC5Gl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,7 +31,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "bolha-ajuste",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",

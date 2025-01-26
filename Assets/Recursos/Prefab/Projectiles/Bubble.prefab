@@ -50,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.51
+  m_Radius: 1
 --- !u!50 &2911506626339077191
 Rigidbody2D:
   serializedVersion: 4
@@ -94,12 +94,6 @@ MonoBehaviour:
   sineAmplitude: 1
   sineFrequency: 2
   spawnEase: 24
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  scenarioLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &5491740072684841401
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,8 +119,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5491740072684841401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17, y: -0.03, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3619230434139300706}
@@ -173,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 774670309, guid: 06808e6c00edb0e40be84f28ce7c9951, type: 3}
+  m_Sprite: {fileID: -859877682, guid: 9d58adb18a1ec2a418dbd309f8959151, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
