@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class BubbleBehavior : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BubbleBehavior : MonoBehaviour
     [SerializeField] private float verticalFloat = 0.5f;
     [SerializeField] private float drag = 0.1f;
     [SerializeField] private float lifetime = 5f;
+    [SerializeField] private float topContactHeight = 0.5f; // Altura da bolha considerada para ser estourada
+    [FormerlySerializedAs("playerImpulseOnContact")] [SerializeField] private float impulseForce = 10f;
     [SerializeField] private float sineAmplitude = 1f;
     [SerializeField] private float sineFrequency = 2f;
     [SerializeField] private Ease spawnEase = Ease.OutBack;
@@ -79,27 +82,50 @@ public class BubbleBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!_playerTrapped && collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.CompareTag("Scenario"))
+        {
+            // Destroi a bolha se tocar no cenário e não estiver com um jogador preso
+            if (!_playerTrapped)
+                Destroy(gameObject);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             var player = collision.gameObject.GetComponent<PlayerController>();
-            if (player != null && player != _shooter)
+            if (player != null)
             {
-                TrapPlayer(player);
-            }
-        }
-        else if (!_playerTrapped && collision.gameObject.CompareTag("Scenario"))
-        {
-            Destroy(gameObject);
-        }
-        else if (_playerTrapped && collision.gameObject == _shooter.gameObject)
-        {
-            float topCollisionTolerance = 0.5f;
-            if (collision.contacts[0].point.y > transform.position.y + topCollisionTolerance)
-            {
-                KillTrappedPlayer();
+                if (!_playerTrapped && player != _shooter)
+                {
+                    // Prende o jogador inimigo
+                    TrapPlayer(player);
+                }
+                else if (_playerTrapped && player == _shooter)
+                {
+                    // Verifica se o jogador que disparou a bolha pulou na parte superior dela
+                    Vector2 collisionPoint = collision.contacts[0].point;
+                    if (collisionPoint.y > transform.position.y + topContactHeight) // Apenas parte superior da bolha
+                    {
+                        // Mata o jogador preso
+                        KillTrappedPlayer();
+                    }
+                }
+                else if (player == _shooter)
+                {
+                    // Detecta se o jogador que disparou pulou na bolha para aplicar impulso
+                    Vector2 collisionPoint = collision.contacts[0].point;
+                    if (collisionPoint.y > transform.position.y + topContactHeight) // Apenas parte superior da bolha
+                    {
+                        // Aplica um impulso no jogador
+                        Vector2 forceDirection = (collision.transform.position - transform.position).normalized;
+                        player.GetComponent<Rigidbody2D>().AddForce(forceDirection * impulseForce, ForceMode2D.Impulse);
+
+                        // Estoura a bolha
+                        Destroy(gameObject);
+                    }
+                }
             }
         }
     }
+
 
     private void TrapPlayer(PlayerController player)
     {

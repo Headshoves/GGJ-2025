@@ -84,17 +84,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9726e00e9251742be985270845939d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialForce: 18
+  initialForce: 5
   scaleDuration: 5
   verticalFloat: 0.8
   drag: 1
   lifetime: 2
+  topContactHeight: 0.3
+  impulseForce: 90
   sineAmplitude: 1
   sineFrequency: 2
   spawnEase: 24
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
 --- !u!1 &5491740072684841401
 GameObject:
   m_ObjectHideFlags: 0
