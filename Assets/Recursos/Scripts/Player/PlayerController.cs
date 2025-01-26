@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     private bool isHoldingJump; // Verifica se o jogador esta segurando o botao de pulo
     private int currentJumps; // Contador de saltos restantes
 
+    private bool hasLanded = false;
+
     // Ao ativar o objeto, pega o PlayerInput dele e adiciona o callback do Jump e do move
     private void OnEnable(){
         rb = GetComponent<Rigidbody2D>();
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         //Faz a movimentacao do personagem e a animacao
         rb.velocity = new Vector2(movimentInput.x * _speed, rb.velocity.y);
-        animator.SetBool("Run", movimentInput.x != 0);
+        animator.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f);
 
         // Se o jogador nao estiver no chao e estiver segurando o botao de pulo
         if (!onGround && isHoldingJump && rb.velocity.y < fallingTreshold){
@@ -59,10 +61,10 @@ public class PlayerController : MonoBehaviour
         else{
             rb.gravityScale = defaultGravity; // Gravidade normal quando no chao ou nao segurando o botao de pulo
         }
-        
-        animator.SetBool("IsFalling", rb.velocity.y < fallingTreshold);
+
+        animator.SetBool("IsFalling", rb.velocity.y < fallingTreshold && !onGround);
     }
-    
+
     // Chamado no FixedUpdate, verifica a direcao e chama o flip
     private void Update()
     {
@@ -105,10 +107,17 @@ public class PlayerController : MonoBehaviour
         isHoldingJump = false;
     }
 
-    public void OnGround(bool isGround){
+    public void OnGround(bool isGround)
+    {
         onGround = isGround;
-        if (isGround){
+        if (isGround && !hasLanded)
+        {
             animator.SetTrigger("GroundCollision");
+            hasLanded = true;
+        }
+        else if (!isGround)
+        {
+            hasLanded = false;
         }
     }
 
@@ -161,5 +170,5 @@ public class PlayerController : MonoBehaviour
         theScale.x = Mathf.Sign(rb.velocity.x) * Mathf.Abs(theScale.x);
         transform.localScale = theScale;
     }
-
+        
 }

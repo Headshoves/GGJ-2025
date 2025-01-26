@@ -51,15 +51,12 @@ MonoBehaviour:
   - nome: 
     prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
     sprite: {fileID: 992769782, guid: 45136ae7857fff54b84e108d736b27a7, type: 3}
-    confirmed: 0
   - nome: 
     prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
     sprite: {fileID: -298075431, guid: 45136ae7857fff54b84e108d736b27a7, type: 3}
-    confirmed: 0
   - nome: 
     prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
     sprite: {fileID: -1767188381, guid: 45136ae7857fff54b84e108d736b27a7, type: 3}
-    confirmed: 0
 --- !u!114 &-6037538241556193883
 MonoBehaviour:
   m_ObjectHideFlags: 0
