@@ -927,7 +927,6 @@ MonoBehaviour:
   intro: {fileID: 518815450}
   gameManager: {fileID: 849270152}
   vitoriaPopUp: {fileID: 1182841111}
-  isOnIntro: 0
 --- !u!114 &801695417
 MonoBehaviour:
   m_ObjectHideFlags: 0
