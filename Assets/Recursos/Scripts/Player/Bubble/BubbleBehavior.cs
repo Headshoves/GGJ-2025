@@ -74,13 +74,25 @@ public class BubbleBehavior : MonoBehaviour
         _rigidbody.AddForce(_direction * initialForce, ForceMode2D.Impulse);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Scenario"))
+        {
+            Destroy(gameObject); // Estoura a bolha ao encostar no cenário
+        }
+        else if (collision.gameObject.CompareTag("Bubble"))
+        {
+            var otherBubble = collision.gameObject.GetComponent<BubbleBehavior>();
+            if (otherBubble != null && otherBubble._shooter != _shooter)
+            {
+                Pop(); // Estoura a bolha somente se for de outro jogador
+            }
+        }
     }
 
     private async void Pop()
     {
-        // Lógica para estouro da bolha, se necessário
+        Debug.Log("Pop");
+        Destroy(gameObject);
     }
 }
