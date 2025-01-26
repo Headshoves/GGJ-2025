@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6340211744063166835}
-  - component: {fileID: 7148197183815474315}
   - component: {fileID: 8444130359048430213}
-  m_Layer: 0
+  - component: {fileID: 7148197183815474315}
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,30 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7148197183815474315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4306477456504020708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ecb273e4e64c844bb11fddfff1bdcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  playerSelection: {fileID: 404697963933869686, guid: b34c56b151446f642b7759060ce4988a, type: 3}
-  personagens:
-  - nome: 
-    prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
-    sprite: {fileID: 1186284167, guid: 736461622f90f024583c3ed2e2e56890, type: 3}
-  - nome: 
-    prefab: {fileID: 6172444452967105113, guid: d690504cf0c5fbf4d9990ab9f28b0472, type: 3}
-    sprite: {fileID: 1159995338, guid: 736461622f90f024583c3ed2e2e56890, type: 3}
-  - nome: 
-    prefab: {fileID: 4925023981312711640, guid: baa9f965d51481b4d8af38415efba36a, type: 3}
-    sprite: {fileID: -1659242107, guid: e2af08e7776a9914d84eb9450c4018f4, type: 3}
 --- !u!114 &8444130359048430213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +60,30 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 5dc38043-fbb7-45aa-857b-335a2676c3f5
+  m_DefaultActionMap: MenuController
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7148197183815474315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306477456504020708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ecb273e4e64c844bb11fddfff1bdcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  playerSelection: {fileID: 404697963933869686, guid: b34c56b151446f642b7759060ce4988a, type: 3}
+  personagens:
+  - nome: 
+    prefab: {fileID: 6172444452967105113, guid: 600273615a5edc74492a424c06a882a4, type: 3}
+    sprite: {fileID: 1186284167, guid: 736461622f90f024583c3ed2e2e56890, type: 3}
+  - nome: 
+    prefab: {fileID: 6172444452967105113, guid: d690504cf0c5fbf4d9990ab9f28b0472, type: 3}
+    sprite: {fileID: 1159995338, guid: 736461622f90f024583c3ed2e2e56890, type: 3}
+  - nome: 
+    prefab: {fileID: 4925023981312711640, guid: baa9f965d51481b4d8af38415efba36a, type: 3}
+    sprite: {fileID: -1659242107, guid: e2af08e7776a9914d84eb9450c4018f4, type: 3}
