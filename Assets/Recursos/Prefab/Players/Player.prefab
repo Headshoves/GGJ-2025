@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8945398443240112822}
   - component: {fileID: 1249946055131186971}
   - component: {fileID: 311699159132660308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 271906721685618523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BubbleSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,9 +152,9 @@ GameObject:
   - component: {fileID: 8754710360877766918}
   - component: {fileID: 5855326940198644230}
   - component: {fileID: 1815785470978361580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 6141596315447714731}
   - component: {fileID: 4654171974298499937}
   - component: {fileID: 7955771498955381595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
