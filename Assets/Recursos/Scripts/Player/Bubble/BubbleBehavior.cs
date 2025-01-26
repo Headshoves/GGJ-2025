@@ -15,7 +15,8 @@ public class BubbleBehavior : MonoBehaviour
     [SerializeField] private float sineAmplitude = 1f;
     [SerializeField] private float sineFrequency = 2f;
     [SerializeField] private Ease spawnEase = Ease.OutBack;
-    [SerializeField] private LayerMask enemyLayer;
+    // [SerializeField] private LayerMask enemyLayer;
+    // [SerializeField] private LayerMask scenarioLayer;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
@@ -45,7 +46,7 @@ public class BubbleBehavior : MonoBehaviour
 
         if (!_playerTrapped)
         {
-            Destroy(gameObject, lifetime);
+            //Destroy(gameObject, lifetime);
         }
     }
 
@@ -80,21 +81,28 @@ public class BubbleBehavior : MonoBehaviour
         _rigidbody.AddForce(_direction * initialForce, ForceMode2D.Impulse);
     }
 
+    //tenta usar pra chegar por tag em vez de layer, parece que náo est[a reconhecendo por layer
+    
+    //em ultimo caso, vamos fazer algo simples, se o inimigo colidir com a bolha, ele e empurrado
+    //tem muita logica de bolha e nao aplicamos nada disso ainda na build final, assim nao vamos ter o que entregar
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Scenario"))
+        Debug.Log("hit");
+        if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("COLIDIU COM O CENÁRIO");
             // Destroi a bolha se tocar no cenário e não estiver com um jogador preso
             if (!_playerTrapped)
-                Destroy(gameObject);
+                gameObject.SetActive(false);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        else if (collision.gameObject.CompareTag("Player"))
         {
             var player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
                 if (!_playerTrapped && player != _shooter)
                 {
+                    Debug.Log("COLIDIU COM O INIMIGO");
                     // Prende o jogador inimigo
                     TrapPlayer(player);
                 }
@@ -104,6 +112,7 @@ public class BubbleBehavior : MonoBehaviour
                     Vector2 collisionPoint = collision.contacts[0].point;
                     if (collisionPoint.y > transform.position.y + topContactHeight) // Apenas parte superior da bolha
                     {
+                        Debug.Log("DERROTOU O INIMIGO");
                         // Mata o jogador preso
                         KillTrappedPlayer();
                     }
@@ -114,12 +123,13 @@ public class BubbleBehavior : MonoBehaviour
                     Vector2 collisionPoint = collision.contacts[0].point;
                     if (collisionPoint.y > transform.position.y + topContactHeight) // Apenas parte superior da bolha
                     {
+                        Debug.Log("IMPULSIONOU O JOGADOR");
                         // Aplica um impulso no jogador
                         Vector2 forceDirection = (collision.transform.position - transform.position).normalized;
                         player.GetComponent<Rigidbody2D>().AddForce(forceDirection * impulseForce, ForceMode2D.Impulse);
 
                         // Estoura a bolha
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                     }
                 }
             }
@@ -132,11 +142,11 @@ public class BubbleBehavior : MonoBehaviour
         _playerTrapped = true;
         _trappedPlayer = player;
         _trappedPlayer.enabled = false; // Desativa os controles do jogador preso
-        _trappedPlayer.GetComponent<CapsuleCollider>().enabled = false; // Desativa a colisão do jogador preso
+        _trappedPlayer.GetComponent<CapsuleCollider2D>().enabled = false; // Desativa a colisão do jogador preso
         _escapeAttempts = 0;
 
-        CancelInvoke(nameof(DestroyBubble));
-        Invoke(nameof(DestroyBubble), lifetime + 2f); // Extende o tempo de vida da bolha
+        //CancelInvoke(nameof(DestroyBubble));
+        //Invoke(nameof(DestroyBubble), lifetime + 2f); // Extende o tempo de vida da bolha
     }
 
     public void AttemptEscape()
@@ -169,7 +179,7 @@ public class BubbleBehavior : MonoBehaviour
         _playerTrapped = false;
 
         // Destroi a bolha
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 
@@ -180,17 +190,17 @@ public class BubbleBehavior : MonoBehaviour
             ReleasePlayer();
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void KillTrappedPlayer()
     {
         if (_trappedPlayer != null)
         {
-            Destroy(_trappedPlayer.gameObject); // Remove o jogador preso
+            _trappedPlayer.gameObject.SetActive(false); // Remove o jogador preso
         }
 
         _playerTrapped = false;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

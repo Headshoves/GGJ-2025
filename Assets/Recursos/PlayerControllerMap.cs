@@ -62,6 +62,15 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a00975b-ebd3-42e5-89c1-4dab3bb10bc3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8127a8a-08ff-41b1-94b6-dc9a49f32a63"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -299,6 +319,34 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Trapped"",
+            ""id"": ""c8797f9b-5fe4-4e7f-9578-ea671ceb7be9"",
+            ""actions"": [
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""35f4005b-449e-4293-9913-7abfd6358e13"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d1187e4a-579d-4c16-822d-c95881f297e1"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -309,11 +357,15 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         m_GamePlay_Dash = m_GamePlay.FindAction("Dash", throwIfNotFound: true);
         m_GamePlay_Shoot = m_GamePlay.FindAction("Shoot", throwIfNotFound: true);
+        m_GamePlay_Escape = m_GamePlay.FindAction("Escape", throwIfNotFound: true);
         // MenuController
         m_MenuController = asset.FindActionMap("MenuController", throwIfNotFound: true);
         m_MenuController_NextChar = m_MenuController.FindAction("NextChar", throwIfNotFound: true);
         m_MenuController_PrevChar = m_MenuController.FindAction("PrevChar", throwIfNotFound: true);
         m_MenuController_Confirm = m_MenuController.FindAction("Confirm", throwIfNotFound: true);
+        // Trapped
+        m_Trapped = asset.FindActionMap("Trapped", throwIfNotFound: true);
+        m_Trapped_Escape = m_Trapped.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -379,6 +431,7 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Jump;
     private readonly InputAction m_GamePlay_Dash;
     private readonly InputAction m_GamePlay_Shoot;
+    private readonly InputAction m_GamePlay_Escape;
     public struct GamePlayActions
     {
         private @PlayerControllerMap m_Wrapper;
@@ -387,6 +440,7 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
         public InputAction @Dash => m_Wrapper.m_GamePlay_Dash;
         public InputAction @Shoot => m_Wrapper.m_GamePlay_Shoot;
+        public InputAction @Escape => m_Wrapper.m_GamePlay_Escape;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -408,6 +462,9 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -424,6 +481,9 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -503,17 +563,68 @@ public partial class @PlayerControllerMap: IInputActionCollection2, IDisposable
         }
     }
     public MenuControllerActions @MenuController => new MenuControllerActions(this);
+
+    // Trapped
+    private readonly InputActionMap m_Trapped;
+    private List<ITrappedActions> m_TrappedActionsCallbackInterfaces = new List<ITrappedActions>();
+    private readonly InputAction m_Trapped_Escape;
+    public struct TrappedActions
+    {
+        private @PlayerControllerMap m_Wrapper;
+        public TrappedActions(@PlayerControllerMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Escape => m_Wrapper.m_Trapped_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_Trapped; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TrappedActions set) { return set.Get(); }
+        public void AddCallbacks(ITrappedActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TrappedActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TrappedActionsCallbackInterfaces.Add(instance);
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
+        }
+
+        private void UnregisterCallbacks(ITrappedActions instance)
+        {
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
+        }
+
+        public void RemoveCallbacks(ITrappedActions instance)
+        {
+            if (m_Wrapper.m_TrappedActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITrappedActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TrappedActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TrappedActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TrappedActions @Trapped => new TrappedActions(this);
     public interface IGamePlayActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
     public interface IMenuControllerActions
     {
         void OnNextChar(InputAction.CallbackContext context);
         void OnPrevChar(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
+    }
+    public interface ITrappedActions
+    {
+        void OnEscape(InputAction.CallbackContext context);
     }
 }
