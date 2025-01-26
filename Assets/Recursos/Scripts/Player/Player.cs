@@ -84,6 +84,11 @@ public class Player : MonoBehaviour{
         }
         else if(confirmed && playerInput.user.index == 0){
             PlayerSelectionController.Instance.StartGame();
+            
+            
+            playerInput.actions.FindAction("NextChar").performed -= NextChar;
+            playerInput.actions.FindAction("PrevChar").performed -= PrevChar;
+            playerInput.actions.FindAction("Confirm").performed -= ConfirmChar;
         }
     }
     

@@ -142,7 +142,7 @@ public class BubbleBehavior : MonoBehaviour
         _playerTrapped = true;
         _trappedPlayer = player;
         _trappedPlayer.enabled = false; // Desativa os controles do jogador preso
-        _trappedPlayer.GetComponent<CapsuleCollider>().enabled = false; // Desativa a colisão do jogador preso
+        _trappedPlayer.GetComponent<CapsuleCollider2D>().enabled = false; // Desativa a colisão do jogador preso
         _escapeAttempts = 0;
 
         //CancelInvoke(nameof(DestroyBubble));
