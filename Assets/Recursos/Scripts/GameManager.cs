@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private float cameraMoveSpeed = 0.1f; // Velocidade de movimento da câmera
+    [SerializeField] private float cameraMoveSpeed = 0.1f; // Velocidade de movimento da cï¿½mera
     [SerializeField] Transform spawnPonit; // Ponto de spawn
-    [SerializeField] GameObject[] levels; // Array de níveis
+    [SerializeField] GameObject[] levels; // Array de nï¿½veis
     [SerializeField] private float spawnInterval = 3f; // Intervalo entre os spawns em segundos
     public bool gameHasStarted = false;
 
@@ -20,13 +20,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Movimenta a câmera ou outras lógicas podem ser colocadas aqui
+        // Movimenta a cï¿½mera ou outras lï¿½gicas podem ser colocadas aqui
     }
 
     public void SpawRoom()
     {
-        int randomLevelIndex = Random.Range(0, levels.Length); // Escolhe um nível aleatório
-        Instantiate(levels[randomLevelIndex], spawnPonit.position, Quaternion.identity); // Instancia o nível
+        int randomLevelIndex = Random.Range(0, levels.Length); // Escolhe um nï¿½vel aleatï¿½rio
+        Instantiate(levels[randomLevelIndex], spawnPonit.position, Quaternion.identity); // Instancia o nï¿½vel
     }
 
     public IEnumerator RestartCurrentScene()
