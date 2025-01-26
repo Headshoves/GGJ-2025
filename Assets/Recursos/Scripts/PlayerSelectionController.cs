@@ -9,6 +9,8 @@ public class PlayerSelectionController : MonoBehaviour{
     [SerializeField] private TextMeshProUGUI log;
     [SerializeField] private GameObject playerSelecion;
 
+    [SerializeField] private GameObject intro;
+
     [SerializeField] GameManager gameManager;
     
     public static PlayerSelectionController Instance;
@@ -37,5 +39,10 @@ public class PlayerSelectionController : MonoBehaviour{
         gameManager.StartGame();
         
 
+    }
+
+    public void HideIntro()
+    {
+        intro.SetActive(false);
     }
 }
