@@ -18,14 +18,15 @@ public class Player : MonoBehaviour{
 
     private void OnEnable(){
         playerSelection = Instantiate(playerSelection, GameObject.Find("PlayersContainer").transform);
-        
+        PlayerSelectionController.Instance.HideIntro();
+
         playerInput = GetComponent<PlayerInput>();
 
         playerInput.actions.FindAction("NextChar").performed += NextChar;
         playerInput.actions.FindAction("PrevChar").performed += PrevChar;
         playerInput.actions.FindAction("Confirm").performed += ConfirmChar;
         
-        PlayerSelectionController.Instance.HideIntro();
+        
     }
 
     private void OnDisable(){
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour{
     }
 
     public void ConfirmChar(InputAction.CallbackContext context){
-        if (!confirmed){
+        if (!confirmed && PlayerSelectionController.Instance.isOnIntro == false){
             playerSelection.GetComponent<Image>().color = Color.green;
 
             if (playerInput.user.index != 0){

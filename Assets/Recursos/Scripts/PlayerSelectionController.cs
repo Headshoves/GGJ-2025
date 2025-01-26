@@ -19,26 +19,37 @@ public class PlayerSelectionController : MonoBehaviour{
 
     public GameObject vitoriaPopUp;
 
+    public bool isOnIntro;
+
     private void Awake(){
         Instance = this;
         gameManager = FindObjectOfType<GameManager>();
+        isOnIntro = true;
     }
 
     public void AddPlayer(Player player){
-        players.Add(player);
+        if (isOnIntro == false)
+        {
+            players.Add(player);
 
-        if (players.Count == PlayerInputManager.instance.playerCount){
-            log.text = "Todos os players prontos, Player 1 aperte X para iniciar";
+            if (players.Count == PlayerInputManager.instance.playerCount)
+            {
+                log.text = "Todos os players prontos, Player 1 aperte X para iniciar";
+            }
         }
     }
 
     public void StartGame(){
-        for (int i = 0; i < players.Count; i++){
-            players[i].SpawnChar();
+        if (isOnIntro == false)
+        {
+            for (int i = 0; i < players.Count; i++)
+            {
+                players[i].SpawnChar();
+            }
+
+            playerSelecion.SetActive(false);
+            gameManager.StartGame();
         }
-        
-        playerSelecion.SetActive(false);
-        gameManager.StartGame();
         
 
     }
@@ -46,6 +57,7 @@ public class PlayerSelectionController : MonoBehaviour{
     public void HideIntro()
     {
         intro.SetActive(false);
+        StartCoroutine(isOnIntroChanger());
     }
 
     public void CheckEndGame()
@@ -74,5 +86,11 @@ public class PlayerSelectionController : MonoBehaviour{
             gameManager.StartCoroutine(gameManager.RestartCurrentScene());
             Debug.Log("Jogo acabou, geral perdeu");
         }
+    }
+
+    IEnumerator isOnIntroChanger()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isOnIntro = false;
     }
 }
