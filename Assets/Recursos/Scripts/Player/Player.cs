@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour{
     [SerializeField] private PlayerController controller;
+    [SerializeField] private BubbleShoot bubbleShoot;
     [SerializeField] private GameObject playerSelection;
     [SerializeField] private Personagem[] personagens;
     
@@ -37,6 +38,11 @@ public class Player : MonoBehaviour{
             playerInput.actions.FindAction("Move").performed -= controller.OnMove;
             playerInput.actions.FindAction("Move").canceled -= controller.OnMove;
             controller.gameObject.SetActive(false);
+        }
+        
+        if (playerInput != null)
+        {
+            playerInput.actions.FindAction("Shoot").performed -= bubbleShoot.OnShoot;
         }
         
         playerInput.actions.FindAction("NextChar").performed -= NextChar;
@@ -89,8 +95,17 @@ public class Player : MonoBehaviour{
 
     public void SpawnChar(){
         GameObject personagem = Instantiate(personagens[charIndex].prefab);
+        
+        // Definição do PlayerController
         controller = personagem.GetComponent<PlayerController>();
         controller.player = this;
+        
+        // Definição do BubbleShoot
+        bubbleShoot = personagem.GetComponent<BubbleShoot>();
+        bubbleShoot.SetController = controller;
+        
+        // Definição do PlayerInput no BubbleShoot
+        // bubbleShoot.SetInput = playerInput;
 
         playerInput.SwitchCurrentActionMap("GamePlay");
 
@@ -99,6 +114,7 @@ public class Player : MonoBehaviour{
         playerInput.actions.FindAction("Dash").performed += controller.Dash;
         playerInput.actions.FindAction("Move").performed += controller.OnMove;
         playerInput.actions.FindAction("Move").canceled += controller.OnMove;
+        playerInput.actions.FindAction("Shoot").performed += bubbleShoot.OnShoot;
     }
 
 

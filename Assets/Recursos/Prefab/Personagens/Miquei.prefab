@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7914424112262093623}
   - component: {fileID: 47690088477171354}
   - component: {fileID: 1559017374040996821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,11 +117,12 @@ GameObject:
   - component: {fileID: 4925023981312711646}
   - component: {fileID: 4925023981312711645}
   - component: {fileID: 4925023981312711459}
+  - component: {fileID: 4930247363661256940}
   - component: {fileID: 4662231002701329287}
   - component: {fileID: 631394494326559085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Miquei
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +141,7 @@ Transform:
   m_Children:
   - {fileID: 4956928264029878826}
   - {fileID: 7914424112262093623}
+  - {fileID: 4677873999930030833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,7 +186,23 @@ MonoBehaviour:
   animator: {fileID: 1559017374040996821}
   onGround: 1
   player: {fileID: 0}
-  deathParticle: {fileID: 2107833984454716376, guid: 50d525080b74512488b5a269f1fc52af, type: 3}
+--- !u!114 &4930247363661256940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925023981312711640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b006e07b24d8c4fbf8a0cbcbfcdd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubblePrefab: {fileID: 3619230434139300717, guid: f70cf503c8d0955469765cf1bd4514cd, type: 3}
+  spawnPoint: {fileID: 4677873999930030833}
+  fireRate: 0.5
+  fireDelay: 0
+  bubbleDirection: {x: 1, y: 0}
 --- !u!50 &4662231002701329287
 Rigidbody2D:
   serializedVersion: 4
@@ -325,7 +343,7 @@ GameObject:
   - component: {fileID: 4956928264029878826}
   - component: {fileID: 5865708102558425824}
   - component: {fileID: 9194462267044414170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -386,3 +404,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4925023981312711459}
+--- !u!1 &7005667413882712708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4677873999930030833}
+  m_Layer: 6
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4677873999930030833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005667413882712708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4925023981312711646}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

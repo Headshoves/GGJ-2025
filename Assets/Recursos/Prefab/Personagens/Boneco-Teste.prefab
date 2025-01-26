@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8945398443240112822}
   - component: {fileID: 1249946055131186971}
   - component: {fileID: 311699159132660308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -306365418, guid: 0c732dfaa5732004790f421138487ece, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,6 +106,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2347454442945155718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2576893138162359491}
+  m_Layer: 6
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2576893138162359491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347454442945155718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6172444452967105119}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6172444452967105113
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,11 +148,12 @@ GameObject:
   - component: {fileID: 6172444452967105119}
   - component: {fileID: 6172444452967105116}
   - component: {fileID: 6172444452967105186}
+  - component: {fileID: -1746931672789299086}
   - component: {fileID: 5855326940198644230}
   - component: {fileID: 1815785470978361580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boneco-Teste
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +172,7 @@ Transform:
   m_Children:
   - {fileID: 6141596315447714731}
   - {fileID: 8945398443240112822}
+  - {fileID: 2576893138162359491}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,7 +217,23 @@ MonoBehaviour:
   animator: {fileID: 311699159132660308}
   onGround: 1
   player: {fileID: 0}
-  deathParticle: {fileID: 2107833984454716376, guid: 50d525080b74512488b5a269f1fc52af, type: 3}
+--- !u!114 &-1746931672789299086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172444452967105113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b006e07b24d8c4fbf8a0cbcbfcdd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubblePrefab: {fileID: 3619230434139300717, guid: f70cf503c8d0955469765cf1bd4514cd, type: 3}
+  spawnPoint: {fileID: 2576893138162359491}
+  fireRate: 0.5
+  fireDelay: 0
+  bubbleDirection: {x: 1, y: 0}
 --- !u!50 &5855326940198644230
 Rigidbody2D:
   serializedVersion: 4
@@ -325,7 +374,7 @@ GameObject:
   - component: {fileID: 6141596315447714731}
   - component: {fileID: 4654171974298499937}
   - component: {fileID: 7955771498955381595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
