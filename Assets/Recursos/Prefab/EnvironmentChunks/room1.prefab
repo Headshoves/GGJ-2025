@@ -95,13 +95,8 @@ GameObject:
   - component: {fileID: 258800787}
   - component: {fileID: 258800789}
   - component: {fileID: 258800788}
-<<<<<<< HEAD
   - component: {fileID: 870666434}
   m_Layer: 0
-=======
-  - component: {fileID: 8572838935541690506}
-  m_Layer: 7
->>>>>>> 3a647601445dd45ffb5c81f329d5fc125e9768a9
   m_Name: Ground (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -568,13 +563,8 @@ GameObject:
   - component: {fileID: 1782741974}
   - component: {fileID: 1782741976}
   - component: {fileID: 1782741975}
-<<<<<<< HEAD
   - component: {fileID: 1276022994}
   m_Layer: 0
-=======
-  - component: {fileID: 78727556756515681}
-  m_Layer: 7
->>>>>>> 3a647601445dd45ffb5c81f329d5fc125e9768a9
   m_Name: Ground (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -705,13 +695,8 @@ GameObject:
   - component: {fileID: 1902050520}
   - component: {fileID: 1902050522}
   - component: {fileID: 1902050521}
-<<<<<<< HEAD
   - component: {fileID: 650724597}
   m_Layer: 0
-=======
-  - component: {fileID: 4612787163396944238}
-  m_Layer: 7
->>>>>>> 3a647601445dd45ffb5c81f329d5fc125e9768a9
   m_Name: Ground (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -842,13 +827,8 @@ GameObject:
   - component: {fileID: 6882266079734730901}
   - component: {fileID: 6882266079734730903}
   - component: {fileID: 6882266079734730900}
-<<<<<<< HEAD
   - component: {fileID: 478120590}
   m_Layer: 0
-=======
-  - component: {fileID: 7796655564474075274}
-  m_Layer: 7
->>>>>>> 3a647601445dd45ffb5c81f329d5fc125e9768a9
   m_Name: Ground (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -978,7 +958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6882266079886859549}
   - component: {fileID: 6882266079886859548}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: room1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,8 +972,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6882266079886859522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 10.48, z: -0.20612825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1030,13 +1010,8 @@ GameObject:
   - component: {fileID: 6882266081184467154}
   - component: {fileID: 6882266081184467180}
   - component: {fileID: 6882266081184467181}
-<<<<<<< HEAD
   - component: {fileID: 92690719}
   m_Layer: 0
-=======
-  - component: {fileID: 3294393923675404336}
-  m_Layer: 7
->>>>>>> 3a647601445dd45ffb5c81f329d5fc125e9768a9
   m_Name: Ground (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
