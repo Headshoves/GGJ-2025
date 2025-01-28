@@ -1063,8 +1063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f5d48c6cc24e041a2395b74edccb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMoveSpeed: 0
-  speedMultiplier: 0
+  cameraMoveSpeed: 0.5
+  speedMultiplier: 0.1
   spawnPonit: {fileID: 773092672}
   levels:
   - {fileID: 6882266079886859522, guid: f7ce8acad4c0b88408dd601d0fb3fcdb, type: 3}

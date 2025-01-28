@@ -7,13 +7,9 @@
     <list default="true" id="4592b284-fe8d-40f8-97fe-e3031fa5bef0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GGJ2025.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GGJ2025.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/PlayerControllerMap.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Capivara.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Personagens/Capivara.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Prefab/Projectiles/Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Prefab/Projectiles/Bubble.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Bubble/BubbleBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Bubble/BubbleBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Movement/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Movement/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Recursos/Fonts/PixelifySans-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Recursos/Fonts/PixelifySans-VariableFont_wght SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
