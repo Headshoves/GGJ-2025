@@ -38,12 +38,17 @@ public class PlayerSelectionController : MonoBehaviour{
     }
 
     public void StartGame(){
-        for (int i = 0; i < players.Count; i++){
-            players[i].SpawnChar();
-        }
-        
-        playerSelecion.SetActive(false);
-        gameManager.StartGame();
+
+       // if (players.Count < 1) 
+      //  {
+
+            for (int i = 0; i < players.Count; i++) {
+                players[i].SpawnChar();
+            }
+
+            playerSelecion.SetActive(false);
+            gameManager.StartGame();
+       // }
         
 
     }
