@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     // Metodo de dash
     public void Dash(InputAction.CallbackContext ctx)
     {
-        if (canDash && !isDashing)
+        if (canDash && !isDashing && player.isInBuble == false)
         {
             StartCoroutine(DashCoroutine());
         }

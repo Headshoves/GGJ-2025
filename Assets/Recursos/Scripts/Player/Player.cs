@@ -143,7 +143,7 @@ public class Player : MonoBehaviour{
         controller.enabled = false;
         controller.animator.SetBool("estaNaBolha", true);
 
-        await Task.Delay(2000);
+        await Task.Delay(1000);
 
         isInBuble = false;
         controller.enabled = true;
