@@ -144,6 +144,11 @@ public class Player : MonoBehaviour{
         controller.enabled = true;
     }
 
+    public Sprite GetCurrentSprite()
+    {
+        return personagens[charIndex].sprite;
+    }
+
 }
 
 [Serializable]
