@@ -15,7 +15,7 @@ public class PlayerSelectionController : MonoBehaviour{
     
     public static PlayerSelectionController Instance;
     
-    private List<Player> players = new List<Player>();
+    public List<Player> players = new List<Player>();
 
     public GameObject vitoriaPopUp;
 
@@ -38,12 +38,18 @@ public class PlayerSelectionController : MonoBehaviour{
     }
 
     public void StartGame(){
-        for (int i = 0; i < players.Count; i++){
-            players[i].SpawnChar();
+
+        Debug.Log(players.Count);
+        if (players.Count > 1) 
+        {
+
+            for (int i = 0; i < players.Count; i++) {
+                players[i].SpawnChar();
+            }
+
+            playerSelecion.SetActive(false);
+            gameManager.StartGame();
         }
-        
-        playerSelecion.SetActive(false);
-        gameManager.StartGame();
         
 
     }

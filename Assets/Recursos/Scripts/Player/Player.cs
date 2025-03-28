@@ -17,7 +17,9 @@ public class Player : MonoBehaviour{
     private bool confirmed;
     
     private PlayerInput playerInput;
-    
+
+    public bool isInBuble;
+
 
     private void OnEnable(){
         playerSelection = Instantiate(playerSelection, GameObject.Find("PlayersContainer").transform);
@@ -137,11 +139,15 @@ public class Player : MonoBehaviour{
     }
 
     public async void Freeze(){
+        isInBuble = true;
         controller.enabled = false;
+        controller.animator.SetBool("estaNaBolha", true);
 
-        await Task.Delay(2000);
+        await Task.Delay(1000);
 
+        isInBuble = false;
         controller.enabled = true;
+        controller.animator.SetBool("estaNaBolha", false);
     }
 
 }

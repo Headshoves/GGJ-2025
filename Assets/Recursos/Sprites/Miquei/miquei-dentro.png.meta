@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82eec91fce7057d4e841c99bc4037b18
+guid: e8a30878dd8d6414cb342756bdf913f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -91,10 +91,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: capybara-dentro_0
+      name: miquei-dentro_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90c4fcf6b837c5845a76deb18ae398d3
-      internalID: 1447511759
+      spriteID: 8f085c74f70f1a84fbb015dd7b92ec81
+      internalID: -1413583869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-dentro_1
+      name: miquei-dentro_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b90643ff625c8a4783e5dd5de044ecb
-      internalID: 819982851
+      spriteID: ba3b2356430f21e47bc60cd0576bd644
+      internalID: -1921006531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-dentro_2
+      name: miquei-dentro_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e3eb30a5722cda4794e38f136491d4f
-      internalID: -1254024152
+      spriteID: d8a79beb3d5a9ba429b16b308a9832ca
+      internalID: -1184029560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-dentro_3
+      name: miquei-dentro_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa195987e4541c45bc26b68f51a2b2c
-      internalID: -1891937523
+      spriteID: bc46eabdb5ab2fa4da2a1668b9807e4f
+      internalID: 1356441102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-dentro_4
+      name: miquei-dentro_4
       rect:
         serializedVersion: 2
         x: 128
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bed558ce28284442a3ca49120be9213
-      internalID: -1370357467
+      spriteID: 6ccebf591653e1040befe6c54fef7a9b
+      internalID: -279372541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-dentro_5
+      name: miquei-dentro_5
       rect:
         serializedVersion: 2
         x: 160
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abee8666d6e1a9e46909d1a244876ad4
-      internalID: 1707748869
+      spriteID: 93fc2bef0b3c8274ca801eb187366a8a
+      internalID: 679766305
       vertices: []
       indices: 
       edges: []
@@ -241,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      capybara-dentro_0: 1447511759
-      capybara-dentro_1: 819982851
-      capybara-dentro_2: -1254024152
-      capybara-dentro_3: -1891937523
-      capybara-dentro_4: -1370357467
-      capybara-dentro_5: 1707748869
+      miquei-dentro_0: -1413583869
+      miquei-dentro_1: -1921006531
+      miquei-dentro_2: -1184029560
+      miquei-dentro_3: 1356441102
+      miquei-dentro_4: -279372541
+      miquei-dentro_5: 679766305
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

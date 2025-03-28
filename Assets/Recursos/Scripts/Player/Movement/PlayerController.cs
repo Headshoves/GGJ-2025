@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerInput playerInput;
     [SerializeField] private SpriteRenderer playerSprite;
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
 
     private Vector2 movimentInput;
     
@@ -87,20 +87,23 @@ public class PlayerController : MonoBehaviour
     // Metodo de pulo besico, aplica uma forca no player para cima
     public void Jump(InputAction.CallbackContext ctx)
     {
-        animator.SetTrigger("Jump");
-        if (onGround){
-            // Se o jogador estiver no ch�o, reseta o contador de pulos
-            currentJumps = 1; 
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (player.isInBuble == false)
+        {
+            animator.SetTrigger("Jump");
+            if (onGround) {
+                // Se o jogador estiver no ch�o, reseta o contador de pulos
+                currentJumps = 1;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            else if (currentJumps < maxJumps) {
+                // Permite o segundo pulo caso o jogador ainda tenha saltos dispoiveis
+                currentJumps = maxJumps;
+                rb.AddForce(Vector2.up * (jumpForce * secondJumpForceReduce), ForceMode2D.Impulse);
+            }
+
+            // Marque que o jogador esta segurando o bota�o de pulo
+            isHoldingJump = true;
         }
-        else if (currentJumps < maxJumps){
-            // Permite o segundo pulo caso o jogador ainda tenha saltos dispoiveis
-            currentJumps = maxJumps;
-            rb.AddForce(Vector2.up * (jumpForce * secondJumpForceReduce), ForceMode2D.Impulse);
-        }
-        
-        // Marque que o jogador esta segurando o bota�o de pulo
-        isHoldingJump = true;
     }
 
     // Metodo para quando o botao de pulo e solto
@@ -123,7 +126,7 @@ public class PlayerController : MonoBehaviour
     // Metodo de dash
     public void Dash(InputAction.CallbackContext ctx)
     {
-        if (canDash && !isDashing)
+        if (canDash && !isDashing && player.isInBuble == false)
         {
             StartCoroutine(DashCoroutine());
         }
